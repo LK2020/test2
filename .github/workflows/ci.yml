@@ -2,13 +2,13 @@ name: Node.js CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repository
@@ -17,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16' # Убедитесь, что версия соответствует вашему проекту
+          node-version: '20' # Убедитесь, что версия соответствует вашему проекту
 
       - name: Install dependencies
         run: npm install
